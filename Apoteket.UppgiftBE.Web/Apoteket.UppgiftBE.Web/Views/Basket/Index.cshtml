@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Apoteket.UppgiftBE.Web.Models.Product>
+@{
+    ViewBag.Title = "eFrukt - Varukorg";
+}
+<div class="row">
+    <div class="col-sm-12">
+        <h2>@ViewBag.Title</h2>
+    </div>
+</div>
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-sm-4">
+                @item.Name
+            </div>
+            <div class="col-sm-4">
+                @{
+                    string price = string.Empty;
+                    if (!string.IsNullOrEmpty(item.Price))
+                    {
+                        price = Convert.ToDecimal(item.Price.Replace(".", ",")).ToString("0.00") + " kr";
+                    }
+                }
+                @if (item.Price != "")
+                {
+                    @price
+                }
+            </div>
+            <div class="col-sm-4">
+                <a class="btn btn-danger" href="@Url.Action("Remove", "Basket", new { id = item.Id }, Request.Url.Scheme)">Ta bort</a>
+            </div>
+        </div>
+    }
+    <div class="row">
+        <div class="col-sm-4">
+            <p class="text-primary">Totalt</p>
+        </div>
+        <div class="col-sm-2">
+            @{
+                var total = Model.Sum(p => double.Parse(p.Price)).ToString("0.00");
+            }
+            <p class="text-primary">@total kr</p>
+        </div>
+    </div>
+
+}
+<div class="row">
+
+    @{
+        string ordernummer = string.Empty;
+
+        if (TempData["OrderNumber"] != null)
+        {
+            ordernummer = TempData["OrderNumber"].ToString();
+        }
+    }
+    @if (!string.IsNullOrEmpty(ordernummer))
+    {
+
+        <div class="col-md-6">
+            <p>Ordernummer: @ordernummer</p>
+        </div>
+    }
+    <div class="col-sm-4 col-sm-offset-8">
+        <a class="btn btn-primary" href="@Url.Action("Checkout", "Basket")">Lägg order</a>
+    </div>
+</div>
+
+

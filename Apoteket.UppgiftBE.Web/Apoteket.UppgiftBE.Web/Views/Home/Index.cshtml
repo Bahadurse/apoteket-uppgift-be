@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Apoteket.UppgiftBE.Web.Models.Product>
+@{
+    ViewBag.Title = "eFrukt - Produktlista";
+}
+<div class="row">
+    <div class="col-sm-12">
+        <h2>@ViewBag.Title</h2>
+    </div>
+</div>
+<div class="row">
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <div class="col-sm-4">
+                @item.Name
+            </div>
+            <div class="col-sm-4">
+                @{
+                    string price = string.Empty;
+                    if (!string.IsNullOrEmpty(item.Price))
+                    {
+                        price = Convert.ToDecimal(item.Price.Replace(".", ",")).ToString("0.00") + " kr";
+                    }
+                }
+                @if (item.Price != "")
+                {
+                    @price
+                }
+
+            </div>
+            <div class="col-sm-4">
+                <a class="btn btn-success" href="@Url.Action("Add", "Basket", new { id = item.Id }, Request.Url.Scheme)">Köp</a>
+            </div>
+        }
+    }
+</div>

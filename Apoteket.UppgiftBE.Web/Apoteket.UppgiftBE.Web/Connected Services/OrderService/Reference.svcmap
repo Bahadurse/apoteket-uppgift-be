@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="88ff676a-1458-41b5-b444-b2447591ff56" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://apoteket-uppgift-be.ginzburg.it/service/OrderService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OrderService.xsd" MetadataType="Schema" ID="98375d19-79b1-47c9-9123-dd61c25524e5" SourceId="1" SourceUrl="http://apoteket-uppgift-be.ginzburg.it/service/OrderService.svc?xsd=xsd1" />
+    <MetadataFile FileName="OrderService.wsdl" MetadataType="Wsdl" ID="9e090119-083c-4144-bff4-1a84cec06f04" SourceId="1" SourceUrl="http://apoteket-uppgift-be.ginzburg.it/service/OrderService.svc?wsdl" />
+    <MetadataFile FileName="OrderService1.xsd" MetadataType="Schema" ID="e64fb615-ba2e-44b4-947f-adf2b0bfefa8" SourceId="1" SourceUrl="http://apoteket-uppgift-be.ginzburg.it/service/OrderService.svc?xsd=xsd0" />
+    <MetadataFile FileName="OrderService2.xsd" MetadataType="Schema" ID="f0b27073-831f-4e69-bccf-0955f58cc426" SourceId="1" SourceUrl="http://apoteket-uppgift-be.ginzburg.it/service/OrderService.svc?xsd=xsd2" />
+    <MetadataFile FileName="OrderService3.xsd" MetadataType="Schema" ID="f5d794fb-bb99-4c5e-855e-6fbbb71f1587" SourceId="1" SourceUrl="http://apoteket-uppgift-be.ginzburg.it/service/OrderService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
